@@ -21,7 +21,7 @@ export class NewDealDialogComponent {
     this.dialogRef.close();
   }
 
-  // Calculate the cap rate with the formula: (Price / NOI) * 100
+  // Calculate the cap rate with the formula: NOI / Price (%)
   calculateCapRate(): void {
     if (this.data.netOperatingIncome > 0 && this.data.purchasePrice > 0) {
       this.data.capRate =
