@@ -3,6 +3,8 @@
 Real Estate Platform is a web application that allows real estate professionals to manage their
 real estate deals.
 
+Access the platform up and running at: https://realestateplatform.netlify.app
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.2.2.
 
 ## How-To Get Up and Running
