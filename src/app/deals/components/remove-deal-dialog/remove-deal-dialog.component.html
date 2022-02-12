@@ -1,0 +1,12 @@
+<div class="remove-deal-dialog">
+  <h1 mat-dialog-title>Remove Deal</h1>
+  <div mat-dialog-content>
+    Do you really want to remove deal {{ data.name }}?
+  </div>
+  <div mat-dialog-actions class="remove-deal-actions">
+    <button mat-flat-button (click)="onNoClick()">No Thanks</button>
+    <button mat-flat-button color="warn" [mat-dialog-close]="data">
+      Remove
+    </button>
+  </div>
+</div>

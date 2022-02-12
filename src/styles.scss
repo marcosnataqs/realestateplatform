@@ -1,0 +1,37 @@
+@use "@angular/material" as mat;
+
+@import "~@angular/material/theming";
+@import "/src/styles/theme.scss";
+
+$custom-typography: mat-typography-config(
+  $font-family: 'Inter, Roboto, "Helvetica Neue", sans-serif;',
+);
+
+@include mat.core($custom-typography);
+
+$realestateplatform-primary: mat.define-palette($primary-custom-palette, 900);
+$realestateplatform-accent: mat.define-palette($accent-custom-palette, 900);
+$realestateplatform-warn: mat.define-palette(mat.$red-palette);
+
+$realestateplatform-theme: mat.define-light-theme(
+  (
+    color: (
+      primary: $realestateplatform-primary,
+      accent: $realestateplatform-accent,
+      warn: $realestateplatform-warn,
+    ),
+  )
+);
+
+@include mat.all-component-themes($realestateplatform-theme);
+
+/* global styles */
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Inter, Roboto, "Helvetica Neue", sans-serif;
+}

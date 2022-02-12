@@ -1,0 +1,86 @@
+<div class="new-deal-dialog">
+  <h1 mat-dialog-title class="new-deal-title">New Deal</h1>
+  <form #dealForm="ngForm">
+    <div mat-dialog-content class="new-deal-fields">
+      <mat-form-field appearance="fill">
+        <mat-label>Name</mat-label>
+        <input
+          matInput
+          type="text"
+          placeholder="New Deal"
+          #name="ngModel"
+          [(ngModel)]="data.name"
+          name="name"
+          minlength="3"
+          maxlength="60"
+          required
+        />
+        <mat-error *ngIf="name.invalid && (name.dirty || name.touched)"
+          >You must enter a deal name with at least 3 characters.</mat-error
+        >
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Address</mat-label>
+        <input
+          matInput
+          type="text"
+          placeholder="Deal Address"
+          [(ngModel)]="data.address"
+          name="adress"
+          maxlength="60"
+        />
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Purchase Price</mat-label>
+        <input
+          matInput
+          placeholder="1,000,000.00"
+          mask="separator.2"
+          thousandSeparator=","
+          [(ngModel)]="data.purchasePrice"
+          (ngModelChange)="calculateCapRate()"
+          name="purchasePrice"
+        />
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Net Operating Income</mat-label>
+        <input
+          matInput
+          type="text"
+          placeholder="100,000.00"
+          mask="separator.2"
+          thousandSeparator=","
+          [(ngModel)]="data.netOperatingIncome"
+          (ngModelChange)="calculateCapRate()"
+          name="netOperatingIncome"
+        />
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Cap Rate</mat-label>
+        <input
+          matInput
+          type="text"
+          mask="percent"
+          suffix="%"
+          [(ngModel)]="capRateFormatted"
+          name="capRate"
+          disabled
+        />
+      </mat-form-field>
+    </div>
+  </form>
+
+  <div mat-dialog-actions class="new-deal-actions">
+    <button mat-flat-button (click)="onNoClick()">No Thanks</button>
+    <button
+      mat-flat-button
+      color="primary"
+      form="dealForm"
+      type="submit"
+      [disabled]="!dealForm.form.valid"
+      [mat-dialog-close]="data"
+    >
+      Save
+    </button>
+  </div>
+</div>

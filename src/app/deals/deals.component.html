@@ -1,0 +1,21 @@
+<!-- Real Estate Platform NavBar -->
+<app-navbar></app-navbar>
+
+<!-- Deals Options -->
+<div class="deals-options">
+  <span class="default-pipeline">DEFAULT PIPELINE</span>
+  <button
+    mat-flat-button
+    aria-label="Add New Deal"
+    color="primary"
+    (click)="openNewDealDialog()"
+  >
+    <mat-icon>add</mat-icon>
+    <span>New Deal</span>
+  </button>
+</div>
+
+<!-- Deals Table -->
+<div class="deals-table">
+  <app-deals-table></app-deals-table>
+</div>

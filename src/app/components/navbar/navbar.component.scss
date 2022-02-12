@@ -1,0 +1,23 @@
+@use "sass:map";
+@use "@angular/material" as mat;
+
+@import "/src/styles/theme.scss";
+
+.title {
+  color: mat.get-color-from-palette($primary-custom-palette, 900);
+}
+
+.spacer {
+  margin-left: 30px;
+}
+
+.deals-tab-title {
+  margin-left: 10px;
+}
+
+.app-navbar {
+  position: sticky;
+  position: -webkit-sticky; /* For macOS/iOS Safari */
+  top: 0; /* Sets the sticky toolbar to be on top */
+  z-index: 1000; /* Ensure that your app's content doesn't overlap the toolbar */
+}
