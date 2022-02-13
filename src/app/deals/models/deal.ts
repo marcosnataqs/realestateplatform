@@ -4,5 +4,5 @@ export interface Deal {
   address: string;
   purchasePrice: number;
   netOperatingIncome: number;
-  capRate: number;
+  capRate: number | null;
 }

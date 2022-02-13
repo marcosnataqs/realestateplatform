@@ -27,6 +27,9 @@ export class NewDealDialogComponent {
       this.data.capRate =
         this.data.netOperatingIncome / this.data.purchasePrice;
       this.capRateFormatted = this.data.capRate * 100;
+    } else {
+      this.data.capRate = null;
+      this.capRateFormatted = null;
     }
   }
 }
